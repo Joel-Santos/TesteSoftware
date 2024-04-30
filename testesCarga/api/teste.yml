@@ -1,0 +1,9 @@
+config:
+  target: 'http://localhost:3000/api/usuarios'  # URL da API que você quer testar
+  phases:
+    - duration: 60              # Duração do teste em segundos
+      arrivalRate: 10           # Novos usuários virtuais por segundo
+scenarios:
+  - flow:
+      - get:
+          url: "/path"          # Caminho do endpoint para testar
