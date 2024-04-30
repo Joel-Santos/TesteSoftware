@@ -11,11 +11,12 @@ function calculateDistance(pointA, pointB) {
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c; // Distância em quilômetros
 
-    return distance;
+    return distance.toFixed(2);
 }
+module.exports = calculateDistance;
 
-// Exemplo de uso:
-const pointA = { lat: 40.7128, lon: -74.0060 }; // Nova York
-const pointB = { lat: 34.0522, lon: -118.2437 }; // Los Angeles
+// // Exemplo de uso:
+// const pointA = { lat: 40.7128, lon: -74.0060 }; // Nova York
+// const pointB = { lat: 34.0522, lon: -118.2437 }; // Los Angeles
 
-console.log(calculateDistance(pointA, pointB));
+// console.log(calculateDistance(pointA, pointB));
