@@ -5,22 +5,24 @@
 // })
 
 // login.spec.js
-describe('Login Page', () => {
+// login.spec.js
+describe('Página de Login', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+      cy.visit('http://localhost:3000');
   });
 
-  it('should successfully log in with correct credentials', () => {
-    cy.get('#username').type('admin');
-    cy.get('#password').type('password');
-    cy.get('button').click();
-    cy.get('#message').should('contain', 'Welcome to the Dashboard!');
+  it('deve logar com sucesso com credenciais corretas', () => {
+      cy.get('#username').type('admin');
+      cy.get('#password').type('password');
+      cy.get('button').click();
+      cy.get('#message').should('contain', 'Bem-vindo ao Dashboard!');
   });
 
-  it('should display an error message for incorrect credentials', () => {
-    cy.get('#username').type('admin');
-    cy.get('#password').type('wrongpassword');
-    cy.get('button').click();
-    cy.get('#message').should('contain', 'Invalid credentials. Try again.');
+  it('deve exibir uma mensagem de erro para credenciais incorretas', () => {
+      cy.get('#username').type('admin');
+      cy.get('#password').type('senhaerrada');
+      cy.get('button').click();
+      cy.get('#message').should('contain', 'Credenciais inválidas. Tente novamente.');
   });
 });
+
