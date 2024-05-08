@@ -30,6 +30,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     if (isValid) {
         this.submit(); // Submete o formulário se tudo estiver correto
+        
     }
 });
 

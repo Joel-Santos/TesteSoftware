@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="aula08-05/styles.css">
+</head>
+<body>
+    <h1>Formulário de Cadastro</h1>
+    <form method="post" action="/cadastro">
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" name="username" >
+        <span id="errouser" class="error-message" style="color: red;"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        <span id="erroemail" class="error-message" style="color: red;"></span><br><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" >
+        <span id="errosenha" class="error-message" style="color: red;"></span><br><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+    <script src="aula08-05/script.js"></script>
+</body>
+</html>

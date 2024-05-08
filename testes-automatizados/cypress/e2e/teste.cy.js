@@ -1,12 +1,6 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('http://localhost:3000/')
-  })
-})
-
 describe('Login Page',()=>{
   beforeEach(()=>{
-    cy.visit('http://localhost:3001/');
+    cy.visit('http://localhost:3002/', { failOnStatusCode: false });
   })
   it('login realizado com sucesso', () =>{
     cy.get('#username').type('admin');
@@ -32,7 +26,5 @@ describe('Login Page',()=>{
     cy.get('button').click();
     cy.get('#message').should('contain', 'Credenciais invalidas, tente novamente.');
   });
-
-
 
 })
