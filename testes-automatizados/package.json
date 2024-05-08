@@ -14,7 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.8.1",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "phone": "^3.1.42",
+    "telefone": "^1.2.4",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

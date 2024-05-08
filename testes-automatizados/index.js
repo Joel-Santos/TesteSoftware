@@ -1,13 +1,20 @@
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 const app = express();
 const PORT = 3000;
-app.use(express.json());
-app.use(express.static('public'));
+// Definindo __dirname no contexto de ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+import {phone} from 'phone';
 // app.get('/', (req, res) => {
 // 	res.send('Olá mundo!');
-// })
+// }),
+app.use(express.static('public'));
+app.use(express.json());
 const users = {
-    admin: 'password'
+    admin: 'password',
+    flavio: 123
 }
 app.post('/login', (req, res)=>{
     const {username, password} = req.body;
@@ -19,6 +26,24 @@ app.post('/login', (req, res)=>{
     }
 })
 
+app.get('/cadastro', (req, res)=>{
+    res.sendFile(path.join(__dirname, 'public/cadastro.html'))
+});
+
+app.post('/cadastro', (req, res)=>{
+    const {nome, idade, email, telefone, endereco} = req.body;
+    if(nome && idade && email && telefone && endereco){
+        console.log(phone(telefone))
+        if(email){
+            
+            res.json({sucess: true, message: 'Cadastro realizado com sucesso'});
+        }else{
+            res.json({sucess: false, message: 'Cadastro invalido.'}); 
+        }   
+    }else{
+        res.json({sucess: false, message: 'Cadastro invalido.'});
+    }
+})
 
 
 

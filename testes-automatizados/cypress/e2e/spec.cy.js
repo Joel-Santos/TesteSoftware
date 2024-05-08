@@ -14,6 +14,12 @@ describe('Login Page',()=>{
     cy.get('button').click();
     cy.get('#message').should('contain', 'Bem-vindo ao Dashboard!');
   });
+  it('Sucesso para flavio', () =>{
+    cy.get('#username').type('flavio');
+    cy.get('#password').type('123');
+    cy.get('button').click();
+    cy.get('#message').should('contain', 'Bem-vindo ao Dashboard!');
+  });
   it('mostrar mensagem de erro', ()=>{
     cy.get('#username').type('admin');
     cy.get('#password').type('passwords');
